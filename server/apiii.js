@@ -30,12 +30,15 @@
 
 
 const getting = async function getUsers(req, res, next){
-    let response = await fetch('http://localhost:3003/USERS')
+    let responsse = await fetch('http://localhost:3003/USERS')
     console.log("Hello");
-    console.log(response)
+    let inJson = await responsse.json()
+    console.log(inJson)
     let trial = {user:"Hiiiiiiii"}
     // req.send(trial)
-    req.triallll = trial
+    // req.triallll = trial
+    req.triallll = inJson
+
     next();
 }
 
